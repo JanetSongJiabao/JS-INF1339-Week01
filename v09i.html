@@ -1,0 +1,129 @@
+<title>version 2</title>
+<style>
+    .standardTable {border:solid;
+                    border-collapse:collapse;}
+    .smalltable{
+        border:solid;
+    }
+    .blackbox{
+        border:solid;
+        height: 100px;
+        width:100px;
+        text-align: center;
+        background-color: black;
+        color: yellow;
+    }
+    .segment{
+        border:solid;
+        height: 40px;
+        width:10px;
+        background-color: white;
+        border-collapse:collapse;
+        }
+    .segmentH{
+        border:solid;
+        height: 10px;
+        width:40px;
+        background-color: white;
+        border-collapse:collapse;
+    }
+    .corner{
+        height: 10px;
+        width:10px;
+    }
+    .middle}{
+        height: 40px;
+        width:40px;
+    }
+</style>
+<script>
+    
+    function display(number){
+        
+        document.getElementById("decimal_input").innerHTML=number
+        var bin = dec2bin2(number)
+        document.getElementById("binary_output").innerHTML=bin
+    }
+
+    function dec2bin2(decimal){
+        var x = decimal
+        var output = ''
+        while (x!==0){
+            remainder = x % 2
+            
+            if(remainder==1){
+                output = '1'+output
+            }
+            else{
+                output = '0'+output
+            }
+            x = Math.floor(x/2)
+        }
+        return output
+    }
+    fucntion illuminate(signals){
+        
+    }
+    function bin2ssd(binary){
+        
+        return ('1000000')
+    }
+
+</script>
+<body>
+<h2>Version 9i Converting to Binary</h2>
+    <Table class="standardTable">
+        <tr>
+            <td class="blackbox"><h3>keypad</h3>
+                <button type="button" onclick='display(1)'>1</button> 
+                <button type="button" onclick='display(2)'>2</button> 
+                <button type="button" onclick='display(3)'>3</button>
+                <br \>
+                <button type="button" onclick='display(4)'>4</button> 
+                <button type="button" onclick='display(5)'>5</button> 
+                <button type="button" onclick='display(6)'>6</button>
+                <br \>
+                <button type="button" onclick='display(7)'>7</button> 
+                <button type="button" onclick='display(8)'>8</button> 
+                <button type="button" onclick='display(9)'>9</button>
+                <br \>
+                <button type="button" onclick='display(0)'>0</button>
+            </td>
+            <td class="blackbox"><h3>Decimal to Binary</h3>
+                <p id="decimal_input">???</p>
+                <p id="binary_output">???</p>
+            </td>
+            <td class="blackbox">Binary to SSD Signals</td>
+            <td class="blackbox"><h3>Illuminate Segments</h3>
+                <table class= "smalltable"><tr class ="box">
+                <td class="corner"></td>
+                <td class="segmentH" id="segmentA">A</td>
+                <td class="corner"></td>
+                </tr>
+                <tr class ="box">
+                <td class="segment" id="segmentF">F</td>
+                <td class="middle"></td>
+                <td class="segment" id="segmentB">B</td>
+                </tr>
+                <tr class ="box">
+                <td class="corner"></td>
+                <td class="segmentH" id="segmentG">G</td>
+                <td class="corner"></td>
+                </tr>
+                <tr class ="box">
+                <td class="segment" id="segmentE">E</td>
+                <td class="middle"></td>
+                <td class="segment" id="segmentC">C</td>
+                </tr>
+                <tr class ="box">
+                <td class="corner"></td>
+                <td class="segmentH" id="segmentD">D</td>
+                <td class="corner"></td>
+                </tr></table>
+            </td>
+        </tr>
+    </Table>
+</body>
+
+<html>
+<head>
